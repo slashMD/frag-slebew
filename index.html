@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRAG-like Shooter (Web)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="auth" class="panel">
+    <h1>⚡ FRAG-like Shooter</h1>
+    <p class="muted">Masuk untuk menyimpan progres atau main sebagai Guest.</p>
+    <input id="username" placeholder="Username">
+    <input id="password" placeholder="Password" type="password">
+    <div class="row">
+      <button id="btnLogin">Login / Signup</button>
+      <button id="btnGuest" class="ghost">Main sebagai Guest</button>
+    </div>
+    <p id="authMsg" class="muted"></p>
+  </div>
+
+  <div id="heroPanel" class="panel hidden">
+    <h2>Pilih Karakter</h2>
+    <div id="heroes" class="grid"></div>
+    <div class="row">
+      <button id="btnToShop">Shop</button>
+      <button id="btnPlay" class="primary">Main!</button>
+      <button id="btnBackAuth" class="ghost">Kembali</button>
+    </div>
+  </div>
+
+  <div id="shopPanel" class="panel hidden">
+    <h2>Shop</h2>
+    <div class="row muted">Koin: <span id="coins">0</span></div>
+    <div id="shop" class="grid"></div>
+    <div class="row">
+      <button id="btnBackHero" class="ghost">Kembali</button>
+    </div>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div class="hud-left">
+      <span>HP: <b id="hp">0</b></span>
+      <span>Skor: <b id="score">0</b></span>
+    </div>
+    <div class="hud-right">
+      <span>Koin: <b id="hudCoins">0</b></span>
+      <span>Ping: <b id="ping">0</b>ms</span>
+    </div>
+  </div>
+
+  <canvas id="game"></canvas>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
